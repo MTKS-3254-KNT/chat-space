@@ -28,14 +28,14 @@ Things you may want to cover:
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | username | string | null: false |
-| Email    | string | null: false |
+| email    | string | null: false |
 | password | string | null: false |
 
 ### Association
 
-- has_many :Messages
-- has_many :groups
+- has_many :messages
 - has_many :groups, through: :groups_users
+- has_many :groups_users
 
 ---
 
@@ -43,15 +43,15 @@ Things you may want to cover:
 
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
-| groupname       | text    | null: false |
-| User_id         | integer | null: false |
-| groups_users_id | integer | null: false |
+| name            | text    | null: false |
+| user_id         | integer | null: false |
 
 ### Association
 
-- belongs_to :user
+- has_many :user
 - has_many :message
 - has_many :users, through: :groups_users
+- has_many :groups_users
 
 ---
 
@@ -62,12 +62,9 @@ Things you may want to cover:
 |user_id |integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
-
-
 ### Association
 
 - belongs_to :user
-
 - belongs_to :group
 
 ---
@@ -76,8 +73,8 @@ Things you may want to cover:
 
 |  Column  |   Type  |            Options             |
 | -------- | ------- | ------------------------------ |
-|   text   |  text   |          null: false           |
-|  image   |  text   |                                |
+| text     | text    |                                |
+| image    | text    |                                |
 | user_id  | integer | null: false, foreign_key: true |
 | group_id | integer | null: false, foreign_key: true |
 
