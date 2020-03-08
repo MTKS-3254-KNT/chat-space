@@ -1,0 +1,109 @@
+.chat {
+  width: calc(100% - 300px);
+  .main_header {
+    background-color: white;
+    border: 1px solid #eeeeee;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 0;
+    &__left {
+      margin-top: 35px;
+      &__title {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      &__members {
+        display: flex;
+        color: #999;
+        font-size: 12px;
+        &__member {
+          margin-left: 5px;
+        }
+      }
+    }
+    &__right {
+      position: relative;
+      width: 72px;
+      height: 40px;
+      margin-top: 28px;
+      line-height: 40px;
+      &__btn{
+        position: absolute;
+        color: #38aef0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 0 20px 0;
+        border: 1px solid #38aef0;
+      }
+    }
+  }
+  .chat_messages{
+    height: calc(100% - 190px);
+    background-color: #fafafa;
+    padding: 35px 0 0 40px;
+    &__group{
+      &__gatmessage{
+        display: flex;
+        padding-bottom: 12px;
+        &__username{
+          color: #333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date{
+          color: #999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      &__message{
+        color: #434a51;
+        font-size: 14px;
+        padding-bottom: 46px;
+      }
+      }
+    }
+  }
+  .form {
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    .new-message{
+      display: flex;
+      justify-content: space-between;
+      .message-box{
+        display: flex;
+        position: relative;
+        padding-right: 15px;
+        width: 100%;
+      &__message {
+        border: none;
+        height: 50px;
+        width: 100%;
+        padding: 0 50px 0 10px;
+      }
+      &__image {
+        position: absolute;
+        top: 13px;
+        right: 30px;
+        &__file {
+          display: none;
+          font-size: 20px;
+          line-height: 50px;
+        }
+      }
+    }
+    .submit-btn {
+      background-color: #38aef0;
+      color: white;
+      font-size: 16px;
+      height: 50px;
+      padding: 0 30px;
+    }
+    }
+  }
+}
