@@ -1,5 +1,5 @@
 .side_bar {
-  color: white;
+  color: $color-white;
   width: 300px;
   .side_header {
     background-color:#253141;
@@ -23,7 +23,7 @@
       width: 60px;
       &__list {
         margin-left: 5px;
-        .my-white {color: white;} 
+        .my-white {color:$color-white;} 
       }
     }
   }
