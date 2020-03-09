@@ -2,13 +2,13 @@
   .side_header
     .side_header__box
       %p.side_header__box__user_name
-        みっつー
+        = current_user.name
     %ul.side_header__lists
       %li.side_header__lists__list
         = link_to "#" do
           %i.fa.fa-edit.my-white
       %li.side_header__lists__list
-        = link_to "#" do
+        = link_to edit_user_path(current_user) do
           %i.fa.fa-cog.my-white
   .side_bar__groups
     .side_bar__groups__group
