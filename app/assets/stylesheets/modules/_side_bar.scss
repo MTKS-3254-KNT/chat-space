@@ -34,6 +34,10 @@
     height: calc(100vh - 100px);
     &__group {
       padding-top: 20px;
+      .lineout{
+        color: $color-white;
+        text-decoration: none;
+      }
       &__name {
         font-size: 15px;
         padding-bottom: 5px;
