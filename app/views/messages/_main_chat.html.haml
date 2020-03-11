@@ -2,50 +2,24 @@
   .main_header
     .main_header__left
       .main_header__left__title
-        グループ名
+        = @group.name
       %ul.main_header__left__members
         Member：
-        %li.main_header__left__members__member
-          め
-        %li.main_header__left__members__member
-          め
-        %li.main_header__left__members__member
-          め
+        - @group.users.each do |user|
+          %li.main_header__left__members__member
+          = user.name
     .main_header__right
-      = link_to "/groups/#{@group.id}/editt" do
+      = link_to edit_group_path(@group.id) do
         .main_header__right__btn Edit
   .chat_messages
-    .chat_messages__group
-      .chat_messages__group__gatmessage
-        .chat_messages__group__gatmessage__username
-          みっつー
-        .chat_messages__group__gatmessage__date
-          2020/03/07(Sat) 20:41:33
-      .chat_messages__group__gatmessage__message
-        猫はかわいい
-
-    .chat_messages__group
-      .chat_messages__group__gatmessage
-        .chat_messages__group__gatmessage__username
-          みっつー
-        .chat_messages__group__gatmessage__date
-          2020/03/07(Sat) 20:41:33
-      .chat_messages__group__gatmessage__message
-        猫はかわいい
-    .chat_messages__group
-      .chat_messages__group__gatmessage
-        .chat_messages__group__gatmessage__username
-          みっつー
-        .chat_messages__group__gatmessage__date
-          2020/03/07(Sat) 20:41:33
-      .chat_messages__group__gatmessage__message
-        猫はかわいい
+    = render @messages #インスタンス変数名が複数形、テンプレート名が単数形なら記述省略ができる
 
   .form
-    %form.new-message
+    = form_for [@group, @message] do |f|
       .message-box
-        %input{class: "message-box__message",type: 'text', placeholder: 'type a message'}
-        %label{class: "message-box__image"}
-          %i.far.fa-images
-          %input{class: "message-box__image__file", type: 'file'}
-      %input{class: "submit-btn", type: 'submit', value: 'Send'}
+        = f.text_field :text, class:"message-box__message", placeholder: 'type a message'
+        .message-box__label
+          = f.label :image, class:"message-box__label__image" do
+            = icon('far', 'images', class: 'icon')
+            = f.file_field :image, class: "message-box__label__image__file"
+        = f.submit 'Send', class: "message-box__btn"

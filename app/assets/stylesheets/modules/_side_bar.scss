@@ -30,8 +30,8 @@
   &__groups {
     background-color: #2f3e51;
     padding: 0 20px;
-    height: 100;
     height: calc(100vh - 100px);
+    overflow: auto;
     &__group {
       padding-top: 20px;
       .lineout{

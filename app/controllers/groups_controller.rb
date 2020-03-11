@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id]) # 受け取った引数を変数に代入
     if @group.update(group_params) # 変更をテーブルに反映
-      redirect_to root_path, notice: 'グループを更新しました' #リダイレクトでrootへ、フラッシュメッセージ表示
+      redirect_to group_messages_path(params[:id]), notice: 'グループを更新しました' #リダイレクトでグループメッセージへ移動、その際にフラッシュメッセージ表示
     else
       render :edit # @group変数を上書きされないようにrenderで表示
     end
