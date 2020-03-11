@@ -13,8 +13,8 @@
   .side_bar__groups
     - current_user.groups.each do |group|
       .side_bar__groups__group
-        = link_to "#" , class:"lineout" do
+        = link_to group_messages_path(group) , class:"lineout" do
           .side_bar__groups__group__name
             = group.name
           .side_bar__groups__group__message
-            新着メッセージ
+            = group.show_last_message
