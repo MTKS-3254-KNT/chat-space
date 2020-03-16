@@ -10,7 +10,9 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params) #グループに送信されたメッセージを新しいレコードを作成し変数に代入
     if @message.save #変数に代入されたメッセージ情報をテーブルに保存
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'# 保存ができたらメッセージを送信したグループにリダイレクト
+      respond_to do |format| #respond_toを使用して返り値の形式を指定する。
+        format.json
+      end
     else
       @messages = @group.messages.includes(:user) #保存ができなかったら最新の情報を変数に代入しindexへ移動
       flash.now[:alert] = 'メッセージを入力してください。'#フラッシュメッセージの表示
