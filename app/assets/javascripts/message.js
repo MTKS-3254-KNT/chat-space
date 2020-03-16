@@ -42,6 +42,7 @@ $(function(){
  }
 
 $('#new_message').on('submit', function(e){
+  let input = $("#new_message").val();
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
