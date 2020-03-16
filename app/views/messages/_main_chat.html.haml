@@ -23,13 +23,3 @@
             = icon('far', 'images', class: 'icon')
             = f.file_field :image, class: "message-box__label__image__file"
         = f.submit 'Send', class: "message-box__btn"
-
--# <%# 👇コメントフォーム 👇URLの作成にも使うので順番注意 👇定型文     👇JSで追加      👇レコードからカラムを展開 %>
--#       <%= form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form| %> 
--#       <%#            👆どのモデルに基づいて作られるかを示すオプション。%>
-
--#         <%= form.text_area :text, placeholder: "コメントする" , rows: "2", class: "textbox" %>
--#         <%# 👆入力フォーム   👆カラム名           👆初期表示           👆表示行数  👆JSで追加 %>
-
--#         <%= form.submit "SEND", class: "form__submit" %>
--#         <%# 👆投稿・編集ボタン       👆JSで追加%>

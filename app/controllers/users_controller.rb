@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # 別解（後で読み返すようにメモ）
+  # 別解（後で読み返せるようにメモしてます）
   # def index
   #   return nil if params[:keyword] == ""
   #   @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
