@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params) #グループに送信されたメッセージを新しいレコードを作成し変数に代入
     if @message.save #変数に代入されたメッセージ情報をテーブルに保存
       respond_to do |format| #respond_toを使用して返り値の形式を指定する。
+        # binding.pry
         format.json
       end
     else
