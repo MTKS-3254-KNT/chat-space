@@ -20,7 +20,7 @@ $(function (){
         </div>
       </div>`
     } else if (message.text) {
-     var html =
+    var html =
       `<div class="chat_messages__group" data-message-id="${message.id}">
         <div class="chat_messages__group__gatmessage">
           <div class="chat_messages__group__gatmessage__username">

@@ -12,8 +12,7 @@
       = link_to edit_group_path(@group.id) do
         .main_header__right__btn Edit
   .chat_messages
-    = render @messages #インスタンス変数名が複数形、テンプレート名が単数形なら記述省略ができる
-
+    = render @messages # インスタンス変数名が複数形、テンプレート名が単数形なら記述省略ができる
   .form
     = form_for [@group, @message], id: "new_messag" do |f|
       .message-box
